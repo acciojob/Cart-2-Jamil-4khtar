@@ -52,10 +52,13 @@ function Cart() {
                                         <button id={`decrement-btn-${item.id}`} onClick={() => handleDecrement(item.id)}>-</button>
                                         <span>{item.amount}</span>
                                         <button id={`increment-btn-${item.id}`} onClick={() => handleIncrement(item.id)}>+</button>
+                                        <br/>
+                                        <button onClick={() => setCartItems(cartItems.filter(ele => item.id !== ele.id))}>Remove item</button>
                                     </div>
                                 ))
                             }
                         </ul>
+                        <button id='clear-all-cart' onClick={() => setCartItems([])}>Clear Cart</button>
                     </div>
                 ) : <p>Cart is currently empty</p>
             }
@@ -77,8 +80,6 @@ function Cart() {
             <h2>Cart</h2>
             <p id='cart-total-amount'>Price: {price}$</p>
             <CartDisplay/>
-            <button id='clear-all-cart' onClick={() => setCartItems([])}>Clear Cart</button>
-
         </div>
     )
 }

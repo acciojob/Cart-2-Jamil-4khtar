@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Header from './Header'
+import Nav from './Header'
 import Cart from './Cart'
 import Products from './Products'
 
@@ -55,7 +55,7 @@ function App() {
         }
       }>
 
-        <Header />
+        <Nav />
         <Cart />
         <Products />
         
